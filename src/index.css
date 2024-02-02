@@ -39,7 +39,7 @@ header h2 {
 .button-container {
   position: absolute;
   display: flex;
-  justify-content: end;
+  flex: end;
   align-items: space-between;
   right: 10%;
 }
@@ -118,4 +118,42 @@ button {
   background-image: linear-gradient(45deg, black, gray);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* login form */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 4rem 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background-color: white;
+  /* border: 2px solid rgba(0, 0, 0, 0.3); */
+}
+
+.login-form label {
+  margin-top: 1rem;
+}
+
+.login-form input {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.login-form button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  color: gray;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
