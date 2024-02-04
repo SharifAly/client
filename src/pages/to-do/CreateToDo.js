@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 // title will send from input, done and email are static values
 
@@ -13,6 +14,8 @@ const CreateToDo = () => {
     email: localStorage.getItem("email"),
   });
 
+  const navigate = useNavigate();
+
   // function to create new to do
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,15 +25,16 @@ const CreateToDo = () => {
       return;
     } else {
       const response = await axios.post("http://localhost:5000/create", data);
-      console.log(response);
+      // console.log(response);
       setData({ ...data, todo: "" });
       Swal.fire("Task created successfully");
+      navigate("/");
     }
   };
   return (
     <div>
       {/* form to create new to do */}
-      <form onSubmit={handleSubmit}>
+      <form className="create-todo" onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label>
         <input
           type="text"
@@ -41,7 +45,9 @@ const CreateToDo = () => {
           // set to do title
           onChange={(e) => setData({ ...data, todo: e.target.value })}
         />
-        <button type="submit">Create</button>
+        <button className="create-todo-btn" type="submit">
+          Create
+        </button>
       </form>
     </div>
   );

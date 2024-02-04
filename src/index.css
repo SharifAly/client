@@ -1,3 +1,9 @@
+/**
+ * Styles for the body and main page sections.
+ * 
+ * Defines styles for the body, header, buttons, info text, 
+ * login form, and media queries for responsive design.
+*/
 body {
   margin: 0;
   boxsizing: border-box;
@@ -7,10 +13,14 @@ body {
   background-color: rgba(254, 255, 236, 0.7);
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 /* home styling */
 
 .home-container {
-  width: 100vw;
+  /* width: 100vw; */
   display: flex;
   margin-top: 5%;
   flex-direction: column;
@@ -95,7 +105,7 @@ button {
   color: blue;
 }
 
-/* info-text styling */
+/* info-text styling for text from home page*/
 
 .info-container {
   width: 50%;
@@ -156,4 +166,195 @@ button {
   color: gray;
   border: 2px solid rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* to do list styling */
+
+.table-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background-color: white;
+}
+
+.styled-table thead tr {
+  background-color: rgb(85, 26, 139);
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+.table-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* table buttons */
+
+.delete-btn {
+  margin-right: 1rem;
+  border: 2px solid rgba(255, 0, 0, 0.3);
+  box-shadow: 0 0 10px 0 rgba(255, 0, 0, 0.2);
+  text-shadow: 0 0 0.4px black;
+  color: red;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 0, 0, 0.6);
+  color: white;
+}
+
+.delete-btn:active {
+  /* transform: translateY(1px); */
+  box-shadow: 0 0 10px 0 rgba(255, 0, 0, 0.2);
+  /* border: 3px solid red; */
+  background: transparent;
+  color: red;
+}
+
+.update-btn {
+  margin-right: 1rem;
+  border: 2px solid rgba(0, 255, 0, 0.3);
+  box-shadow: 0 0 10px 0 rgba(0, 255, 0, 0.2);
+  text-shadow: 0 0 0.4px black;
+  color: green;
+}
+
+.update-btn:hover {
+  background: rgba(0, 255, 0, 0.6);
+  color: white;
+}
+
+.update-btn:active {
+  /* transform: translateY(1px); */
+  box-shadow: 0 0 10px 0 rgba(0, 255, 0, 0.2);
+  /* border: 3px solid red; */
+  background: transparent;
+  color: green;
+}
+
+/* table {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 2rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background-color: white;
+} */
+
+/* tr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .table-title {
+  font-weight: 900;
+  align-self: start;
+  justify-self: center;
+}
+
+.table-done {
+  align-self: center;
+}
+
+.table-button-container {
+  align-self: end;
+} */
+
+/* add to do list styling */
+
+.create-todo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.create-todo label {
+  margin-top: 1rem;
+}
+
+.create-todo input {
+  padding: 0.5rem 1rem;
+  margin: 1rem 0 1rem 0;
+  border-radius: 20px;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.create-todo-btn {
+  margin-right: 1rem;
+  width: 100%;
+  border: 2px solid rgba(0, 0, 255, 0.3);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 255, 0.2);
+  text-shadow: 0 0 0.4px black;
+  color: blue;
+}
+
+.create-todo-btn:hover {
+  background: rgba(0, 0, 255, 0.6);
+  color: white;
+}
+
+.create-todo-btn:active {
+  /* transform: translateY(1px); */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 255, 0.2);
+  /* border: 3px solid red; */
+  background: transparent;
+  color: blue;
+}
+
+/* respnsive design */
+
+/* media querys for the header section */
+
+@media screen and (max-width: 1400px) {
+  header {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .button-container {
+    position: relative;
+    display: flex;
+    flex: end;
+    align-items: space-between;
+    right: 0;
+    left: 5%;
+  }
 }

@@ -1,29 +1,21 @@
-/**
- * Register component handles user registration.
- *
- * Allows user to enter first name, last name, email and password.
- * On submit, sends registration data to backend API.
- * Shows error alerts if any fields are missing.
- * Navigates to login page after successful registration.
- */
-import React from "react";
-import { useState } from "react";
-import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+import React, { useState } from "react";
 import Swal from "sweetalert2";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Register = () => {
-  // initialize useNavigate
-  const navigate = useNavigate();
-
-  // data to register new user
+const EditProfile = () => {
   const [data, setData] = useState({
     f_name: "",
     l_name: "",
     email: "",
     password: "",
   });
-  // function to register new user
+
+  // change the url and create route in express js, this is just basic layout to change the user profile data
+
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (data.f_name.trim() === "") {
@@ -41,7 +33,7 @@ const Register = () => {
     } else {
       // send registration data to backend API if all data is inserted to form
       const response = await axios.post("http://localhost:5000/register", data);
-      Swal.fire("Registration successful");
+      console.log(response);
       navigate("/login");
     }
   };
@@ -92,4 +84,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default EditProfile;

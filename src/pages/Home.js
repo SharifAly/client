@@ -8,6 +8,7 @@ import Register from "./profile/auth/Register";
 import CreateToDo from "./to-do/CreateToDo";
 import ToDoList from "./to-do/ToDoList";
 import profilePicture from "../pictures/profile-picture.png";
+import EditProfile from "./profile/EditProfile";
 
 const Home = () => {
   // initialize useNavigate
@@ -49,11 +50,13 @@ const Home = () => {
                 Sign Out
               </button>
               {/* profilepicture */}
-              <img
-                style={{ width: "2em", borderRadius: "50%" }}
-                src={profilePicture}
-                alt="ProfilePicture"
-              />
+              <Link to="/edit-profile">
+                <img
+                  style={{ width: "2em", borderRadius: "50%" }}
+                  src={profilePicture}
+                  alt="ProfilePicture"
+                />
+              </Link>
             </>
           )}
         </div>
@@ -72,6 +75,8 @@ const Home = () => {
         <Route path="/register" element={<Register />} />
         {/* create to do route if a user is logged in */}
         <Route path="/create" element={<CreateToDo />} />
+        {/* edit profile route if a user is logged in */}
+        <Route path="/edit-profile" element={<EditProfile />} />
       </Routes>
     </div>
   );
